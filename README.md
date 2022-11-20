@@ -40,6 +40,12 @@ make build-app
 
 - Inspired by [Sourcegraph Batch Changes - Large-Scale Code Changes](https://about.sourcegraph.com/batch-changes)
 
+## References
+
+- [Go Style | styleguide](https://google.github.io/styleguide/go/)
+- [Learn Go with Tests | Go TDD](https://quii.gitbook.io/learn-go-with-tests/)
+- [Dogs API | Wails Tutorial](https://wails.io/docs/tutorials/dogsapi)
+
 ## Author
 
 👤 **Dung Huynh**
