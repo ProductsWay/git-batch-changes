@@ -1,28 +1,88 @@
-import {useState} from 'react';
-import logo from './assets/images/logo-universal.png';
-import './App.css';
-import {Greet} from "../wailsjs/go/main/App";
+import useSWR from "swr";
 
-function App() {
-    const [resultText, setResultText] = useState("Please enter your name below 👇");
-    const [name, setName] = useState('');
-    const updateName = (e: any) => setName(e.target.value);
-    const updateResultText = (result: string) => setResultText(result);
+import "./App.css";
+import {
+  GetBreedList,
+  GetImageUrlsByBreed,
+  GetRandomImageUrl,
+} from "../wailsjs/go/main/App";
+import { useState } from "react";
 
-    function greet() {
-        Greet(name).then(updateResultText);
-    }
+function BreedList({ name }: { name: string }) {
+  const { isLoading, data: images = [], error } = useSWR(
+    name,
+    GetImageUrlsByBreed,
+  );
 
-    return (
-        <div id="App">
-            <img src={logo} id="logo" alt="logo"/>
-            <div id="result" className="result">{resultText}</div>
-            <div id="input" className="input-box">
-                <input id="name" className="input" onChange={updateName} autoComplete="off" name="input" type="text"/>
-                <button className="btn" onClick={greet}>Greet</button>
-            </div>
-        </div>
-    )
+  if (isLoading) return <p>Loading</p>;
+
+  if (error) return <p>Failed to fetch</p>;
+
+  return (
+    <ol>
+      {images.map((img) => (
+        <li key={img}>
+          <img src={img} alt="dog" />
+        </li>
+      ))}
+    </ol>
+  );
 }
 
-export default App
+function RandomDog({ showedAt }: { showedAt: number }) {
+  const { isLoading, data: img, error } = useSWR(
+    `random-${showedAt}`,
+    GetRandomImageUrl,
+  );
+
+  if (isLoading) return <p>Loading</p>;
+
+  if (error) return <p>Failed to fetch</p>;
+
+  return <img src={img} alt="dog" />;
+}
+
+function App() {
+  const { isLoading, data: breeds = [], error } = useSWR(
+    "getBreedList",
+    GetBreedList,
+  );
+  const [seletedBreed, setSeletedBreed] = useState<
+    { type: "random" | "list"; value?: string }
+  >();
+
+  if (isLoading) return <p>Loading</p>;
+
+  if (error) return <p>Failed to fetch</p>;
+
+  return (
+    <div id="App">
+      <h3>Dog API</h3>
+
+      <button type="button" onClick={() => setSeletedBreed({ type: "random" })}>
+        Fetch random dog
+      </button>
+      <p>
+        Click on down arrow to select a breed
+
+        <select
+          onChange={(evt) =>
+            setSeletedBreed({ type: "list", value: evt.target.value })}
+        >
+          <option value=""></option>
+          {breeds.map((breed) => (
+            <option key={breed} value={breed}>
+              {breed}
+            </option>
+          ))}
+        </select>
+      </p>
+
+      {seletedBreed?.value && <BreedList name={seletedBreed.value} />}
+
+      {seletedBreed?.type === "random" && <RandomDog showedAt={Date.now()} />}
+    </div>
+  );
+}
+
+export default App;
