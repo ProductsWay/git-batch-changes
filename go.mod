@@ -1,12 +1,20 @@
 module git-batch-changes
 
-go 1.18
+go 1.19
 
-require github.com/wailsapp/wails/v2 v2.2.0
+require (
+	github.com/go-playground/log/v8 v8.0.1
+	github.com/google/go-github v17.0.0+incompatible
+	github.com/wailsapp/wails/v2 v2.2.0
+)
 
 require (
 	github.com/bep/debounce v1.2.1 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
+	github.com/go-playground/errors/v5 v5.2.3 // indirect
+	github.com/go-playground/pkg/v5 v5.6.0 // indirect
+	github.com/google/go-cmp v0.5.9 // indirect
+	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/jchv/go-winloader v0.0.0-20210711035445-715c2860da7e // indirect
@@ -28,6 +36,7 @@ require (
 	golang.org/x/exp v0.0.0-20220303212507-bbda1eaf7a17 // indirect
 	golang.org/x/net v0.0.0-20220722155237-a158d28d115b // indirect
 	golang.org/x/sys v0.0.0-20220722155257-8c9f86f7a55f // indirect
+	golang.org/x/term v0.0.0-20220526004731-065cf7ba2467 // indirect
 	golang.org/x/text v0.3.7 // indirect
 )
 

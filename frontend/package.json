@@ -9,8 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "latest",
+    "@hookform/devtools": "4.2.3",
+    "@mantine/core": "5.8.2",
+    "@mantine/hooks": "5.8.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "7.39.4",
+    "react-hot-toast": "2.4.0",
+    "swr": "2.0.0-rc.0",
+    "pino": "latest"
   },
   "devDependencies": {
     "@types/react": "^18.0.25",

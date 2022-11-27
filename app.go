@@ -2,7 +2,9 @@ package main
 
 import (
 	"context"
-	"fmt"
+
+	"github.com/go-playground/log/v8"
+	"github.com/google/go-github/github"
 )
 
 // App struct
@@ -19,9 +21,21 @@ func NewApp() *App {
 // so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
+	cLog := new(CustomHandler)
+	log.AddHandler(cLog, log.AllLevels...)
+
 }
 
-// Greet returns a greeting for the given name
-func (a *App) Greet(name string) string {
-	return fmt.Sprintf("Hello %s, It's show time!", name)
+// GetGithubRepositories returns all repos for the given username
+func (a *App) GetGithubRepositories(username string) []*github.Repository {
+	client := github.NewClient(nil)
+
+	repos, _, err := client.Repositories.List(context.Background(), username, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	log.Info(repos)
+
+	return repos
 }
