@@ -1,20 +1,20 @@
+import GithubRepositories from "./components/GithubRepositories";
+import GithubUsernameForm from "./components/GithubUsernameForm";
+import logger from "./logger";
 import {
-  ColorScheme,
+  Center,
+  type ColorScheme,
   ColorSchemeProvider,
   MantineProvider,
-  Text
 } from "@mantine/core";
 import { useColorScheme, useHotkeys, useLocalStorage } from "@mantine/hooks";
-import logger from "./logger";
-import GithubUsernameForm from "./components/GithubUsernameForm";
-import GithubRepositories from "./components/GithubRepositories";
 
 function App() {
-  const [username, setUsername] = useLocalStorage<string>({
-    key:'username',
-    defaultValue: '',
-    getInitialValueInEffect: true
-  })
+  const [username, setUsername] = useLocalStorage({
+    key: "username",
+    defaultValue: "",
+    getInitialValueInEffect: true,
+  });
   const preferredColorScheme = useColorScheme();
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
@@ -22,13 +22,19 @@ function App() {
     getInitialValueInEffect: true,
   });
 
-  const toggleColorScheme = (value?: ColorScheme) =>
+  const toggleColorScheme = (value?: ColorScheme) => {
     setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+  };
 
-  useHotkeys([["mod+J", () => {
-    logger.info("change theme");
-    return toggleColorScheme();
-  }]]);
+  useHotkeys([
+    [
+      "mod+J",
+      () => {
+        logger.info("change theme");
+        toggleColorScheme();
+      },
+    ],
+  ]);
 
   return (
     <ColorSchemeProvider
@@ -40,11 +46,21 @@ function App() {
         withGlobalStyles
         withNormalizeCSS
       >
-        <GithubUsernameForm onSubmitHandler={formValues => setUsername(formValues.username)} />
+        <GithubUsernameForm
+          onSubmitHandler={(formValues) => {
+            setUsername(formValues.username);
+          }}
+        />
 
-        {username.length > 0 ? <GithubRepositories username={username} />: <Text>Please enter your Github account </Text>}
+        <Center>
+          {username.length > 0 ? (
+            <GithubRepositories username={username} />
+          ) : (
+            <p>Please enter your Github account</p>
+          )}
+        </Center>
       </MantineProvider>
-      </ColorSchemeProvider>
+    </ColorSchemeProvider>
   );
 }
 

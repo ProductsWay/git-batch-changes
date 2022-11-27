@@ -5,11 +5,15 @@ type FormValues = {
   username: string;
 };
 
-function GithubUsernameForm({ onSubmitHandler } : { onSubmitHandler: (data: FormValues) => void}) {
-  const { handleSubmit, control } = useForm<
-    FormValues
-  >();
-  const onSubmit = (data: FormValues) => onSubmitHandler(data);
+function GithubUsernameForm({
+  onSubmitHandler,
+}: {
+  onSubmitHandler: (data: FormValues) => void;
+}) {
+  const { handleSubmit, control } = useForm<FormValues>();
+  const onSubmit = (data: FormValues) => {
+    onSubmitHandler(data);
+  };
 
   // TODO: add devtool
   return (

@@ -1,28 +1,31 @@
-import useSWR from "swr";
-import { Center, List, Loader } from "@mantine/core";
-
 import { GetGithubRepositories } from "../../wailsjs/go/main/App";
+import { List, Loader } from "@mantine/core";
+import useSWR from "swr";
 
 type Props = {
   username: string;
 };
 
 export default function GithubRepositories({ username }: Props) {
-  const { isLoading, error, data = [] } = useSWR(
-    username,
-    GetGithubRepositories,
-  );
+  const {
+    isLoading,
+    error,
+    data = [],
+  } = useSWR(username, GetGithubRepositories);
 
-  if (isLoading) return <Loader />;
+  if (isLoading) {
+    return <Loader />;
+  }
 
-  if (error) return <p>Failed to fetch</p>;
+  if (error) {
+    return <p>Failed to fetch</p>;
+  }
 
   return (
-    <Center>
-
     <List>
-      {data.map((repo) => <List.Item key={repo.id}>{repo.name}</List.Item>)}
+      {data.map((repo) => (
+        <List.Item key={repo.id}>{repo.name}</List.Item>
+      ))}
     </List>
-    </Center>
   );
 }
