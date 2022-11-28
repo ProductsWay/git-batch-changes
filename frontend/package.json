@@ -20,14 +20,14 @@
     "react-dom": "18.2.0",
     "react-hook-form": "7.39.7",
     "react-hot-toast": "2.4.0",
-    "swr": "2.0.0-rc.1"
+    "swr": "2.0.0-rc.3"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.0.0",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
-    "@typescript-eslint/eslint-plugin": "5.44.0",
-    "@typescript-eslint/parser": "5.44.0",
+    "@typescript-eslint/eslint-plugin": "5.45.0",
+    "@typescript-eslint/parser": "5.45.0",
     "@vitejs/plugin-react": "2.2.0",
     "eslint": "8.28.0",
     "eslint-config-productsway": "0.2.0",
