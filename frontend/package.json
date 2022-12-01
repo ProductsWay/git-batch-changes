@@ -13,8 +13,8 @@
   "dependencies": {
     "@emotion/react": "latest",
     "@hookform/devtools": "4.2.3",
-    "@mantine/core": "5.8.4",
-    "@mantine/hooks": "5.8.4",
+    "@mantine/core": "5.9.0",
+    "@mantine/hooks": "5.9.0",
     "pino": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
