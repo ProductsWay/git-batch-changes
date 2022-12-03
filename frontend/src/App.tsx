@@ -1,18 +1,18 @@
-import useSWR from "swr";
-
-import "./App.css";
 import {
   GetBreedList,
   GetImageUrlsByBreed,
   GetRandomImageUrl,
 } from "../wailsjs/go/main/App";
+import "./App.css";
 import { useState } from "react";
+import useSWR from "swr";
 
 function BreedList({ name }: { name: string }) {
-  const { isLoading, data: images = [], error } = useSWR(
-    name,
-    GetImageUrlsByBreed,
-  );
+  const {
+    isLoading,
+    data: images = [],
+    error,
+  } = useSWR(name, GetImageUrlsByBreed);
 
   if (isLoading) return <p>Loading</p>;
 
@@ -30,10 +30,11 @@ function BreedList({ name }: { name: string }) {
 }
 
 function RandomDog({ showedAt }: { showedAt: number }) {
-  const { isLoading, data: img, error } = useSWR(
-    `random-${showedAt}`,
-    GetRandomImageUrl,
-  );
+  const {
+    isLoading,
+    data: img,
+    error,
+  } = useSWR(`random-${showedAt}`, GetRandomImageUrl);
 
   if (isLoading) return <p>Loading</p>;
 
@@ -43,13 +44,15 @@ function RandomDog({ showedAt }: { showedAt: number }) {
 }
 
 function App() {
-  const { isLoading, data: breeds = [], error } = useSWR(
-    "getBreedList",
-    GetBreedList,
-  );
-  const [seletedBreed, setSeletedBreed] = useState<
-    { type: "random" | "list"; value?: string }
-  >();
+  const {
+    isLoading,
+    data: breeds = [],
+    error,
+  } = useSWR("getBreedList", GetBreedList);
+  const [selectedBreed, setSelectedBreed] = useState<{
+    type: "random" | "list";
+    value?: string;
+  }>();
 
   if (isLoading) return <p>Loading</p>;
 
@@ -59,15 +62,18 @@ function App() {
     <div id="App">
       <h3>Dog API</h3>
 
-      <button type="button" onClick={() => setSeletedBreed({ type: "random" })}>
+      <button
+        type="button"
+        onClick={() => setSelectedBreed({ type: "random" })}
+      >
         Fetch random dog
       </button>
       <p>
         Click on down arrow to select a breed
-
         <select
           onChange={(evt) =>
-            setSeletedBreed({ type: "list", value: evt.target.value })}
+            setSelectedBreed({ type: "list", value: evt.target.value })
+          }
         >
           <option value=""></option>
           {breeds.map((breed) => (
@@ -78,9 +84,9 @@ function App() {
         </select>
       </p>
 
-      {seletedBreed?.value && <BreedList name={seletedBreed.value} />}
+      {selectedBreed?.value && <BreedList name={selectedBreed.value} />}
 
-      {seletedBreed?.type === "random" && <RandomDog showedAt={Date.now()} />}
+      {selectedBreed?.type === "random" && <RandomDog showedAt={Date.now()} />}
     </div>
   );
 }
