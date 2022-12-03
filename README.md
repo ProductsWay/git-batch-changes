@@ -8,7 +8,7 @@
 ## Prerequisites
 
 - node >=16.0.0
-- go >= 1.18
+- go >= 1.19
 - [wailsapp/wails](https://github.com/wailsapp/wails) >= 2.2
 
 ## Install
@@ -31,7 +31,7 @@ make build-app
 
 ## TODO
 
-- [ ] Sync your changes to multiple repositories
+- [ ] Sync your changes to multiples repositories
 - [ ] Connect to Github repository
 - [ ] Preview your changes
 - [ ] Push to main branch or open a pull request for the changes

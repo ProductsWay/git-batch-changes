@@ -1,7 +1,7 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "wails-react-demo",
-  "outputfilename": "wails-react-demo",
+  "name": "git-batch-changes",
+  "outputfilename": "git-batch-changes",
   "frontend:install": "yarn install",
   "frontend:build": "yarn build",
   "frontend:dev:watcher": "yarn dev",
