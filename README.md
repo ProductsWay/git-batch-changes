@@ -5,6 +5,8 @@
 
 > Sync your changes across multi repository
 
+[![IT Man - Tech #29 - Wails - Build beautiful cross-platform applications using Go [Vietnamese]](https://i.ytimg.com/vi/GiKTfVL30CM/hqdefault.jpg)](https://www.youtube.com/watch?v=GiKTfVL30CM)
+
 ## Prerequisites
 
 - node >=16.0.0
