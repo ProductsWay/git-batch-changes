@@ -26,11 +26,17 @@ func (a *App) startup(ctx context.Context) {
 
 }
 
-// GetGithubRepositories returns all repos for the given username
-func (a *App) GetGithubRepositories(username string) []*github.Repository {
+// GetGithubRepositories per page the given username
+func (a *App) GetGithubRepositories(username string, page int) []*github.Repository {
 	client := github.NewClient(nil)
 
-	repos, _, err := client.Repositories.List(context.Background(), username, nil)
+	repos, _, err := client.Repositories.List(context.Background(), username, &github.RepositoryListOptions{
+		Sort: "updated",
+		ListOptions: github.ListOptions{
+			PerPage: 100,
+			Page:    page,
+		},
+	})
 	if err != nil {
 		log.Fatal(err)
 	}

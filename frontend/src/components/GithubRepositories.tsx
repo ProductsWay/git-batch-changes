@@ -4,14 +4,19 @@ import useSWR from "swr";
 
 type Props = {
   username: string;
+  page?: number;
 };
 
-export default function GithubRepositories({ username }: Props) {
+// TODO: support pagination
+export default function GithubRepositories({ username, page = 1 }: Props) {
   const {
     isLoading,
     error,
     data = [],
-  } = useSWR(username.length > 0 ? username: null, GetGithubRepositories);
+  } = useSWR(
+    username.length > 0 ? [username, page] : null,
+    () => GetGithubRepositories(username, page),
+  );
 
   if (isLoading) {
     return <Loader />;
@@ -23,11 +28,11 @@ export default function GithubRepositories({ username }: Props) {
 
   return (
     <Flex
-      direction={{ base: "column", sm: "row" }}
+      direction={{ base: "column" }}
       gap={{ base: "sm", sm: "lg" }}
       justify={{ sm: "center" }}
     >
-      <Title>Repositories of {username}</Title>
+      <Title>Repositories of {username} - Page {page}</Title>
       <List>
         {data.map((repo) => <List.Item key={repo.id}>{repo.name}</List.Item>)}
       </List>
