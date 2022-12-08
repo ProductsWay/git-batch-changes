@@ -1,6 +1,6 @@
 module git-batch-changes
 
-go 1.19
+go 1.19.4
 
 require (
 	github.com/go-playground/log/v8 v8.0.1
