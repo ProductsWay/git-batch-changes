@@ -20,7 +20,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "7.42.1",
     "react-hot-toast": "2.4.0",
-    "swr": "2.0.2"
+    "swr": "2.0.3"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.0.0",
