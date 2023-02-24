@@ -20,10 +20,10 @@
     "react-dom": "18.2.0",
     "react-hook-form": "7.43.2",
     "react-hot-toast": "2.4.0",
-    "swr": "2.0.3"
+    "swr": "2.0.4"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "4.1.0",
+    "@trivago/prettier-plugin-sort-imports": "4.1.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "@typescript-eslint/eslint-plugin": "5.53.0",
