@@ -12,22 +12,22 @@
   },
   "dependencies": {
     "@emotion/react": "latest",
-    "@hookform/devtools": "4.3.0",
+    "@hookform/devtools": "4.3.1",
     "@mantine/core": "5.10.5",
     "@mantine/hooks": "5.10.5",
     "pino": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "7.43.4",
+    "react-hook-form": "7.43.5",
     "react-hot-toast": "2.4.0",
-    "swr": "2.0.4"
+    "swr": "2.1.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.1.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
-    "@typescript-eslint/eslint-plugin": "5.54.0",
-    "@typescript-eslint/parser": "5.54.0",
+    "@typescript-eslint/eslint-plugin": "5.54.1",
+    "@typescript-eslint/parser": "5.54.1",
     "@vitejs/plugin-react": "3.1.0",
     "eslint": "8.35.0",
     "eslint-config-productsway": "0.2.0",
