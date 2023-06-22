@@ -5,10 +5,13 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/go-ole/go-ole v1.2.6 h1:/Fpf6oFPoeFik9ty7siob0G6Ke8QvQEuVcuChpwXzpY=
 github.com/go-ole/go-ole v1.2.6/go.mod h1:pprOEPIfldk/42T2oK7lQ4v4JSDwmV0As9GaiUsvbm0=
+github.com/go-playground/assert/v2 v2.0.1/go.mod h1:VDjEfimB/XKnb+ZQfWdccd7VUvScMdVu0Titje2rxJ4=
 github.com/go-playground/errors/v5 v5.2.3 h1:RPxaFHgJZjgk/OFkUcfytJgRQKRINLtueVxgOdnfPpg=
 github.com/go-playground/errors/v5 v5.2.3/go.mod h1:DincxRGwraWmq39TZDqtnOtHGOJ+AbNbO0OmBzX6MLw=
 github.com/go-playground/log/v8 v8.0.1 h1:yclpYIMZ49kTwtRZsmFlPRr/mmgBrRAXzC7FcZn9jmM=
 github.com/go-playground/log/v8 v8.0.1/go.mod h1:G6XdEdQBItRKCi6XtQ2CMSkyP81AScSQEnNqKzknaT4=
+github.com/go-playground/log/v8 v8.0.2 h1:scgGeVbhj+Z2GavdYSUmxXXmfY1p2mruh0+PBfqIVL0=
+github.com/go-playground/log/v8 v8.0.2/go.mod h1:G6XdEdQBItRKCi6XtQ2CMSkyP81AScSQEnNqKzknaT4=
 github.com/go-playground/pkg/v5 v5.6.0 h1:97YpRFzIcS5NFP2Uzxj8cPYz4zTuwweyXADYcA1KfUQ=
 github.com/go-playground/pkg/v5 v5.6.0/go.mod h1:TvZ2nNtNh6VfoNteY9ApA2BXt1ZwJliFZ4hzPAwLS9Y=
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
