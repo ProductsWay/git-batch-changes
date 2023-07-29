@@ -100,9 +100,9 @@ export namespace github {
 	    public_gists?: number;
 	    followers?: number;
 	    following?: number;
-	    // Go type: time.Time
+	    // Go type: time
 	    created_at?: any;
-	    // Go type: time.Time
+	    // Go type: time
 	    updated_at?: any;
 	    total_private_repos?: number;
 	    owned_private_repos?: number;
