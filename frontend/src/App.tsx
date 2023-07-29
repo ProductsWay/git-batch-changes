@@ -23,7 +23,7 @@ function App() {
   });
 
   const toggleColorScheme = (value?: ColorScheme) => {
-    setColorScheme(value || (colorScheme === "dark" ? "light" : "dark"));
+    setColorScheme(value ?? (colorScheme === "dark" ? "light" : "dark"));
   };
 
   useHotkeys([
@@ -42,9 +42,9 @@ function App() {
       toggleColorScheme={toggleColorScheme}
     >
       <MantineProvider
-        theme={{ colorScheme }}
         withGlobalStyles
         withNormalizeCSS
+        theme={{ colorScheme }}
       >
         <GithubUsernameForm
           onSubmitHandler={(formValues) => {

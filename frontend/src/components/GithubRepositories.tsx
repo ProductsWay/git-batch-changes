@@ -1,10 +1,11 @@
+/* eslint-disable new-cap */
 import { GetGithubRepositories } from "../../wailsjs/go/main/App";
 import { Flex, List, Loader, Title } from "@mantine/core";
 import useSWR from "swr";
 
 type Props = {
-  username: string;
-  page?: number;
+  readonly username: string;
+  readonly page?: number;
 };
 
 // TODO: support pagination
@@ -15,7 +16,7 @@ export default function GithubRepositories({ username, page = 1 }: Props) {
     data = [],
   } = useSWR(
     username.length > 0 ? [username, page] : null,
-    () => GetGithubRepositories(username, page),
+    async () => GetGithubRepositories(username, page),
   );
 
   if (isLoading) {

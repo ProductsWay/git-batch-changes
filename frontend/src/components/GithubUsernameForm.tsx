@@ -8,7 +8,7 @@ type FormValues = {
 function GithubUsernameForm({
   onSubmitHandler,
 }: {
-  onSubmitHandler: (data: FormValues) => void;
+  readonly onSubmitHandler: (data: FormValues) => void;
 }) {
   const { handleSubmit, control } = useForm<FormValues>();
   const onSubmit = (data: FormValues) => {
