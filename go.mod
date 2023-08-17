@@ -3,7 +3,7 @@ module git-batch-changes
 go 1.19
 
 require (
-	github.com/go-playground/log/v8 v8.1.0
+	github.com/go-playground/log/v8 v8.1.2
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/wailsapp/wails/v2 v2.5.1
 )
@@ -11,7 +11,7 @@ require (
 require (
 	github.com/bep/debounce v1.2.1 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
-	github.com/go-playground/errors/v5 v5.3.1 // indirect
+	github.com/go-playground/errors/v5 v5.3.3 // indirect
 	github.com/go-playground/pkg/v5 v5.21.2 // indirect
 	github.com/google/go-cmp v0.5.9 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
