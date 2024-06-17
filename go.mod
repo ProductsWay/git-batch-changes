@@ -7,7 +7,7 @@ toolchain go1.22.4
 require (
 	github.com/go-playground/log/v8 v8.1.2
 	github.com/google/go-github v17.0.0+incompatible
-	github.com/wailsapp/wails/v2 v2.9.0
+	github.com/wailsapp/wails/v2 v2.9.1
 )
 
 require (
