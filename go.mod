@@ -2,7 +2,7 @@ module git-batch-changes
 
 go 1.25.0
 
-toolchain go1.26.6
+toolchain go1.27.0
 
 require (
 	github.com/go-playground/log/v8 v8.1.2
