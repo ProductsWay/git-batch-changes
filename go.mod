@@ -1,6 +1,6 @@
 module git-batch-changes
 
-go 1.25.0
+go 1.26.0
 
 toolchain go1.27.3
 
@@ -8,6 +8,7 @@ require (
 	github.com/go-playground/log/v8 v8.1.2
 	github.com/google/go-github v17.0.0+incompatible
 	github.com/wailsapp/wails/v2 v2.17.0
+	github.com/wailsapp/wails/v3 v3.0.0
 )
 
 require (
@@ -17,8 +18,8 @@ require (
 	github.com/go-ole/go-ole v1.3.0 // indirect
 	github.com/go-playground/errors/v5 v5.3.3 // indirect
 	github.com/go-playground/pkg/v5 v5.21.2 // indirect
-	github.com/godbus/dbus/v5 v5.1.0 // indirect
-	github.com/google/go-cmp v0.5.9 // indirect
+	github.com/godbus/dbus/v5 v5.2.2 // indirect
+	github.com/google/go-cmp v0.7.0 // indirect
 	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/gorilla/websocket v1.5.3 // indirect
@@ -40,12 +41,12 @@ require (
 	github.com/valyala/fasttemplate v1.2.2 // indirect
 	github.com/wailsapp/go-webview2 v1.0.22 // indirect
 	github.com/wailsapp/mimetype v1.4.1 // indirect
-	golang.org/x/crypto v0.53.0 // indirect
-	golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1 // indirect
-	golang.org/x/net v0.56.0 // indirect
-	golang.org/x/sys v0.46.0 // indirect
-	golang.org/x/term v0.44.0 // indirect
-	golang.org/x/text v0.39.0 // indirect
+	golang.org/x/crypto v0.57.0 // indirect
+	golang.org/x/exp v0.0.0-20260410095643-746e56fc9e2f // indirect
+	golang.org/x/net v0.60.0 // indirect
+	golang.org/x/sys v0.48.0 // indirect
+	golang.org/x/term v0.46.0 // indirect
+	golang.org/x/text v0.42.0 // indirect
 )
 
 // replace github.com/wailsapp/wails/v2 v2.2.0 => /Users/huynhducdung/go/pkg/mod
